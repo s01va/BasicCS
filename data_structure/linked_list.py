@@ -63,3 +63,16 @@ print("- desc() end")
 
 print("- print head address: " + str(node_mgmt.head))
 
+print("- delete head node")
+node_mgmt.delete(0)
+
+print("- desc() start:")
+node_mgmt.desc()
+print("- desc() end")
+
+print("- delete node 4")
+node_mgmt.delete(4)
+
+print("- desc() start:")
+node_mgmt.desc()
+print("- desc() end")
