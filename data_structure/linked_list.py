@@ -61,3 +61,5 @@ print("- desc() start:")
 node_mgmt.desc()
 print("- desc() end")
 
+print("- print head address: " + str(node_mgmt.head))
+
