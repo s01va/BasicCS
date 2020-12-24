@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
 # Node 구현
 class Node:
 	def __init__(self, data):
@@ -62,7 +61,7 @@ while node.next:
 	print(node.data)
 	node = node.next
 print(node.data)
-"""
+
 ###################################################
 
 # 파이썬 객체지향 프로그래밍으로 Linked list 구현
@@ -132,4 +131,11 @@ linkedlist1.delete(0)
 print(linkedlist1.head)
 linkedlist1.delete(4)
 linkedlist1.desc()
+
+node = linkedlist1.search_node(5)
+print(node.data)
+
+#########################################
+
+# double linked list
 
