@@ -64,6 +64,8 @@ print(hash_table)
 #############################################################
 
 # Chaining 기법
+# 개방 해슁 또는 Open Hashing 기법 중 하나: 해쉬 테이블 저장공간 외의 공간을 활용하는 기법
+# 충돌이 일어나면, 링크드 리스트라는 자료 구조를 사용해서, 링크드 리스트로 데이터를 추가로 뒤에 연결시켜서 저장하는 기법
 
 # 연습2: 연습1의 해쉬 테이블 코드에 Chaining 기법으로 충돌해결 코드를 추가해보기
 # 1. 해쉬 함수: key % 8
@@ -113,6 +115,9 @@ print(hash_table)
 #############################################
 
 # Linear Probing 기법
+# 폐쇄 해슁 또는 Close Hashing 기법 중 하나: 해쉬 테이블 저장공간 안에서 충돌 문제를 해결하는 기법
+# 충돌이 일어나면, 해당 hash address의 다음 address부터 맨 처음 나오는 빈공간에 저장하는 기법
+# 저장공간 활용도를 높이기 위한 기법
 
 # 연습3: 연습1의 해쉬 테이블 코드에 Linear Probling 기법으로 충돌해결 코드를 추가해보기
 # 1. 해쉬 함수: key % 8
@@ -212,7 +217,7 @@ def save_data(data, value):
 	index_key = get_key(data)
 	hash_address = hash_function(index_key)
 	if hash_table[hash_address] != 0:
-		for index in range(hash_address, len(hash_table )):
+		for index in range(hash_address, len(hash_table)):
 			if hash_table[index] == 0:
 				hash_table[index] = [hash_address, value]
 				return
