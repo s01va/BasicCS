@@ -86,6 +86,7 @@ class Heap:
 ## parent node index = child node index // 2
 ## left child index = parent node index * 2
 ## right child index = parent node index * 2 + 1
+# ㄴ이것이 Heap의 핵심
 
 heap = Heap(15)
 heap.insert(10)
