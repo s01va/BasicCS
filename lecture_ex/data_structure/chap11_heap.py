@@ -151,15 +151,15 @@ class Heap:
 					popped_idx = left_child_popped_idx
 
 			# Case3: left, right child 둘 다 있을 때
-		else:
-			if self.heap_array[left_child_popped_idx] > self.heap_array[right_child_popped_idx]:
-				if self.heap_array[popped_idx] < self.heap_array[left_child_popped_idx]:
-					self.heap_array[popped_idx], self.heap_array[left_child_popped_idx] = self.heap_array[left_child_popped_idx], self.heap_array[popped_idx]
-					popped_idx = right_child_popped_idx
-				else:
-					if self.heap_array[popped_idx] < self.heap_array[right_child_popped_idx]:
-						self.heap_array[popped_idx], self.heap_array[right_child_popped_idx] = self.heap_array[right_child_popped_idx], self.heap_array[popped_idx]
+			else:
+				if self.heap_array[left_child_popped_idx] > self.heap_array[right_child_popped_idx]:
+					if self.heap_array[popped_idx] < self.heap_array[left_child_popped_idx]:
+						self.heap_array[popped_idx], self.heap_array[left_child_popped_idx] = self.heap_array[left_child_popped_idx], self.heap_array[popped_idx]
 						popped_idx = right_child_popped_idx
+					else:
+						if self.heap_array[popped_idx] < self.heap_array[right_child_popped_idx]:
+							self.heap_array[popped_idx], self.heap_array[right_child_popped_idx] = self.heap_array[right_child_popped_idx], self.heap_array[popped_idx]
+							popped_idx = right_child_popped_idx
 
 		return returned_data
 
