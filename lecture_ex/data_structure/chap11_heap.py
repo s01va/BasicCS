@@ -125,11 +125,11 @@ class Heap:
 					return True
 				else:
 					return False
+			else:
+				if self.heap_array[popped_idx] < self.heap_array[right_child_popped_idx]:
+					return True
 				else:
-					if self.heap_array[popped_idx] < self.heap_array[right_child_popped_idx]:
-						return True
-					else:
-						return False
+					return False
 
 	def pop(self):
 		if len(self.heap_array) <= 1:
@@ -155,11 +155,11 @@ class Heap:
 				if self.heap_array[left_child_popped_idx] > self.heap_array[right_child_popped_idx]:
 					if self.heap_array[popped_idx] < self.heap_array[left_child_popped_idx]:
 						self.heap_array[popped_idx], self.heap_array[left_child_popped_idx] = self.heap_array[left_child_popped_idx], self.heap_array[popped_idx]
+						popped_idx = left_child_popped_idx
+				else:
+					if self.heap_array[popped_idx] < self.heap_array[right_child_popped_idx]:
+						self.heap_array[popped_idx], self.heap_array[right_child_popped_idx] = self.heap_array[right_child_popped_idx], self.heap_array[popped_idx]
 						popped_idx = right_child_popped_idx
-					else:
-						if self.heap_array[popped_idx] < self.heap_array[right_child_popped_idx]:
-							self.heap_array[popped_idx], self.heap_array[right_child_popped_idx] = self.heap_array[right_child_popped_idx], self.heap_array[popped_idx]
-							popped_idx = right_child_popped_idx
 
 		return returned_data
 
@@ -183,4 +183,5 @@ class Heap:
 		while self.move_up(inserted_idx):
 			parent_idx = inserted_idx // 2
 			self.heap_array[inserted_idx], self.heap_array[parent_idx] = self.heap_array[parent_idx], self.heap_array[inserted_idx]
+			inserted_idx = parent_idx
 		return True
